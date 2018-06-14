@@ -18,6 +18,18 @@
  <script>
   var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
+ $scope.items = [
+    	'item one',
+    	'item two',
+    	'item three'
+    ];
+	$scope.add = function() {
+        $scope.items.push($scope.input);
+		$scope.input = '';
+    }
+	 $scope.remove = function(index) {
+    	$scope.items.splice(index, 1);
+    }
 $scope.showMe1 = true;
 $scope.showMe2 = true;
 $scope.added = function () {
@@ -39,110 +51,233 @@ $scope.product= function () {
 $scope.access= function () {
   $scope.showMe6 =  true;
   $scope.showMe7 =  true;
-  $scope.showMe8 =  true;
   $scope.showMe5 =  false;
   $scope.showMe3 =  false;
   
 }
-$scope.edit= function ()
-{
-$scope.showMe8= true;
-$scope.showMe6=  true;
-$scope.showMe = !$scope.showMe;
-$scope.showMe9= true;
+$scope.home= function () {
+$scope.showMe7 =  true;
+ $scope.showMe6 = true;
+ $scope.showMe8 =  false;
+ $scope.showMe9 =  false;
+  $scope.showMe10 =  false;
+  $scope.showMe11 =false;
 
 }
-$scope.delete= function () {
-$scope.showMe10 = true;
-$scope.showMe8= false;
+$scope.target= function () {
+$scope.showMe8 =  true;
+$scope.showMe7 =  false;
+ $scope.showMe10 =  false;
+ $scope.showMe9 =  false;
+ $scope.showMe11 =false;
+ $scope.showMe12 =false;
+$scope.showMe13 =false;
+$scope.showMe14 =false;
+$scope.showMe15 =false;
+
+}
+$scope.host= function () {
+$scope.showMe9 =  true;
+$scope.showMe7 =  false;
+$scope.showMe8 =  false;
+ $scope.showMe10 =  false;
+ $scope.showMe11 =false;
+  $scope.showMe12 =false;
+$scope.showMe13 =false;
+$scope.showMe14 =false;
+$scope.showMe15 =false;
 
 }
 
+$scope.test= function () {
+$scope.showMe10 =  true;
+$scope.showMe9 =  false;
+$scope.showMe7 =  false;
+$scope.showMe8 = false;
+$scope.showMe11 =false;
+ $scope.showMe12 =false;
+$scope.showMe13 =false;
+$scope.showMe14 =false;
+$scope.showMe15 =false;
+
+}
+
+$scope.result= function () {
+$scope.showMe10 =  false;
+$scope.showMe9 =  false;
+$scope.showMe7 =  false;
+$scope.showMe8 = false;
+$scope.showMe11 = true;
+$scope.showMe12 =false;
+$scope.showMe14 =false;
+scope.showMe13 =false;
+
+}
+$scope.profile= function (){
+$scope.showMe12 =true; 
+$scope.showMe10 =  false;
+$scope.showMe9 =  false;
+$scope.showMe7 =  false;
+$scope.showMe8 = false;
+$scope.showMe11 =false;
+$scope.showMe14 =false;
+
+}
+$scope.adding= function () {
+$scope.showMe14 =true;
+$scope.showMe15 =false;
+$scope.showMe12 =true;
+}
+$scope.editing= function () {
+$scope.showMe15 =true;
+$scope.showMe14 =false;
+$scope.showMe13 =false;
+$scope.showMe12 =true;
+$scope.showMe11 =false;
+
+}
+$scope.logout= function () {
+$scope.showMe2 =true;
+$scope.showMe3 =  false;
+$scope.showMe4 =   false;
+ $scope.showMe5 =  false;
+$scope.showMe6 = false;
+$scope.showMe7 =  false;
+$scope.showMe8 = false;
+$scope.showMe9 =  false;
+$scope.showMe10 =  false;
+$scope.showMe11 =false;
+$scope.showMe12 =false;
+$scope.showMe13 =false;
+$scope.showMe14 =false;
+$scope.showMe15 =false;
+}
 });
 </script>
-<script>
-var myVar;
-
-function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
-</script>
 <style>
-#login
-{
- width:100%;
- height:100%;
-}
-.carousel-inner
-{
-width:50%;
-height:50%;
-}
 #product
 {
 width:50%;
 height:70%;
 }
-#loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
+#circlecanvas
+{
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Add animation to "page content" */
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
-}
-
-#myDiv {
-  display: none;
+  color: #fff;
+  line-height: 500px;
   text-align: center;
+  background: rgb(109,194,75);
 }
+#circlecanvas1
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(0,162,224);
+  position:absolute;
+  top:40%;
+  left:20%;
+}
+#circlecanvas2
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(239,51,65);
+  position:absolute;
+  top:50%;
+  right:30%;
+}
+#circlecanvas3
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(255,218,41);
+  position:absolute;
+  top:20%;
+  right:50%;
+}
+#circlecanvas4
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(0,162,224);
+  position:absolute;
+  top:40%;
+  left:20%;
+}
+#circlecanvas5
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(239,51,65);
+  position:absolute;
+  top:30%;
+  right:20%;
+}
+#circlecanvas6
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(255,218,41);
+  position:absolute;
+  top:20%;
+  right:50%;
+}
+#circlecanvas7
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(109,194,75);
+  position:absolute;
+  top:25%;
+  right:15%;
+}
+#circlecanvas8
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(109,194,75);
+  position:absolute;
+  top:70%;
+  right:25%;
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+        display: block;
+		margin:0;
+        height:100%;
+        margin:auto;
+        width: 100%; 
+        }
+.login.carousel-inner>.item>img, .carousel-inner>.item>a>img  }
+        display: block;
+		margin:0;
+        height:50%;
+        margin:auto;
+        width: 50%; 
+        }
+	h2
+		{
+		position :absolute;
+		top:20%;
+		left:30%;
+		}
+		
 </style>
-<body ng-app="myApp" ng-controller="myCtrl" onload="myFunction()" style="margin:0;">
+
+<body ng-app="myApp" ng-controller="myCtrl" onload="myFunction()">
   <form name="myForm">
   <div class="container-fluid">	
   <div class="row">
-  <div class="col-sm-7">
+  <div class="col-sm-7" id="logincar">
   <div ng-show="showMe2">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -152,14 +287,24 @@ height:70%;
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" id="login">
+  <div class="carousel-inner">
     <div class="item active">
-      <img src=""></div>
+      <img src="http://www.hdwallpaperswine.com/web/wallpapers/black-white-new-york-city/thumbnail/lg.jpeg">
+	  <h2> Wipro-Be The New</h2>
+	  <div id="circlecanvas1" width="100" height="100"></div>
+	  <div id="circlecanvas2" width="100" height="100"></div>
+	  <div id="circlecanvas3" width="100" height="100"></div>
+	  <div id="circlecanvas7" width="100" height="100"></div>
+	  </div>
     <div class="item">
-      <img src="chicago.jpg" alt="Chicago">
+      <img src="http://papers.co/wallpaper/papers.co-aq02-ai-artificial-intelligence-art-3d-illustration-bw-dark-34-iphone6-plus-wallpaper.jpg"  alt="Chicago">
     </div>
     <div class="item">
-      <img src="ny.jpg" alt="New York">
+      <img src="https://www.amethystrecovery.org/wp-content/uploads/2016/06/Teamwork-2.jpg" alt="New York">
+	  <div id="circlecanvas4" width="100" height="100"></div>
+	  <div id="circlecanvas5" width="100" height="100"></div>
+	  <div id="circlecanvas6" width="100" height="100"></div>
+	  <div id="circlecanvas8" width="100" height="100"></div>
     </div>
   </div>
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -178,20 +323,22 @@ height:70%;
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">   
     <ul class="nav navbar-nav navbar-right">
-	 <li class="active"><a href="#">Home</a></li>
+	 <li class="active"><a href="#menu5" ng-click="home()">Home</a></li>
       <li><a href="#">Host Discovery</a></li>
-	  <li><a data-toggle="modal" data-target="#myModal1">Target List</a></li>
-      <li><a data-toggle="modal" data-target="#myModal2">Hosts</a></li>
-	  <li><a href="#">New Test</a></li>
-	  <li><a href="#">Results</a></li>
-	   <li><a href="#">Reports</a></li>
-	    <li><a href="#">Profile</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+	  <li><a  href="#target" ng-click="target()">Target List</a></li>
+      <li><a  href="#hosts" ng-click="host()">Hosts</a></li>
+	  <li><a href="#newtest" ng-click="test()">New Test</a></li>
+	  <li><a href="#results" ng-click="result()">Results</a></li>
+	   <li><a href="#reports" ng-click="report()">Reports</a></li>
+	    <li><a href="#profile" ng-click="profile()">Profile</a></li>
+      <li><a href="#logout" ng-click="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
 </div>
+</div>
 </br></br></br></br></br>
+<div ng-show="showMe7">
 <div class="row">
 <div class="container">
 <div class="col-sm-5">
@@ -226,106 +373,210 @@ height:70%;
 </div>
 </div>
 </div>
-<div ng-show="showMe10">
-<div class="modal fade" id="myModal4" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Details of Host</h4>
-        </div>
-        <div class="modal-body">
-		  <p>Deleted successfully</p>
-		</div>
-		<div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-	  </div>
-	  </div>
-	  </div>
-	  </div>
-	  <div ng-show="showMe9">
-	  <div class="modal fade" id="myModal3" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Details</h4>
-        </div>
-        <div class="modal-body">
-		<table class="table">
+<div ng-show="showMe11">
+<div class="col-sm-12" id="results">
+<div class="table-responsive">          
+  <table class="table">
     <thead>
       <tr>
-        <th>Provide Details</th>
+        <th></th>
+        <th>Run ID</th>
+        <th>Tool</th>
+        <th>Test Case</th>
+        <th>Queue Date and Time</th>
+        <th>status</th>
+		<th>Details</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-	  <td><div class="input-group">
-	  <span class="input-group-addon"></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="IP Address">
-  </div></td>
-  </tr></br>
-		<tr><td><div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-  </div></td></tr></br>
- <tr><td> <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-  </div></td>
-		</tr>
-		</tbody>
-		</table>
+        <td>1</td>
+        <td>3257499101_561126_10.203.189.98</td>
+        <td>PASSIT</td>
+        <td>passit_windows_upgrade_test</td>
+        <td>May-28-2018,19:18 AM</td>
+        <td>config</td>
+		<td><a data-toggle="pill" href="#menu" ng-click="added()"><h5><b>Click Here</b></h5></a></td>
+      </tr>
+	  </tbody>
+	 </table>
+	 </div>
+	 </div>
+</div>
+
+<div ng-show="showMe12">
+<div class="col-sm-12" id="Profile">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Profile</th>
+      </tr>
+    </thead>
+      <tr>
+        <td><ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#list">Profile</a></li>
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Departments
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="#adding" ng-click="adding()">Add</a></li>
+      <li><a href="#" ng-click="editing()">Edit</a></li>
+      <li><a href="#" ng-click="deleting()">Delete</a></li> 
+    </ul>
+  </li>
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Users
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="#adding" ng-click="adding()">Add</a></li>
+      <li><a href="#editing" ng-click="editing()">Edit</a></li>
+      <li><a href="#deleting" ng-click="deleting()">Delete</a></li> 
+    </ul>
+  </li>
+  </ul></td></tr></table></div></div>
+  
+  <div ng-show="showMe14">
+  <div class="col-sm-11" id="adding">
+ <div class="tab-content">
+    <div id="add" class="tab-pane fade">
+      <h3>Host Details</h3>
+   </div>
+  <ul>
+  <li ng-repeat="item in items">{{item}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button ng-click="remove($index)">Delete</button></li>
+   
+    <div>
+        <input type="text" ng-model="input">
+        <button type="submit" ng-click="add()">Add</button>
+    </div></ul>
+</div>
+</div>
+</div>
+
+<div ng-show="showMe15">
+  <div class="col-sm-11" id="editing">
+  <div class="tab-content">
+	<div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Edit Details</th>
+       </tr>
+	   </thead>
+	   <tbody>
+	   <tr>
+	   <td><div class="input-group">
+      <input id="address" type="text" class="form-control" name="email" placeholder="First Name"></div></td></tr>
+	  <tr><td><div class="input-group">
+      <input id="address" type="text" class="form-control" name="email" placeholder="Last Name"></div></td></tr>
+	  <tr><td><div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input id="email" type="text" class="form-control" name="email" placeholder="Email"></div></td></tr>
+	  <tr><td><li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Department
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="#">GIS</a></li>
+      <li><a href="#">PES</a></li>
+      <li><a href="#">MFG</a></li> 
+	  <li><a href="#">FS</a></li>
+    </ul>
+  </li></td></tr>
+ <tr><td><li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">User Role
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Admin</a></li>
+      <li><a href="#">Employee</a></li>
+      <li><a href="#">Contracter</a></li> 
+    </ul>
+  </li></td></tr>
+  <tr><td align="right"><button type="submit"  name="save" id="save" ng-click="addItem()" class="btn btn-primary"><b>SAVE</b></button></td></tr></tbody></table>
 		</div>
-		<div class="modal-footer">
-           <p><button type="button" class="btn btn-default">Save</button>    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button></p>
-        </div>
-	  </div>
-	  </div>
-	  </div>
-	  </div>
-	 <div ng-show="showMe8">
-	  <div class="modal fade" id="myModal2" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Hosts</h4>
-        </div>
-        <div class="modal-body">
+		</div>
+</div>	 
+</div>
+
+
+
+<div ng-show="showMe10">
+<div class="col-sm-12" id="newtest">
+          <h4>Select Host</h4>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Target IP Address</th>
+      </tr>
+    </thead>
+	<tbody>
+	<tr>
+	<td align ="right"><div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">222.234.236.243</a>
+    </div>
+</div></td></tr><p>Discover Host</p>
+     <tr><td align="right"><button type="submit"  name="save" id="save" ng-click="addItem()" class="btn btn-primary"><b>Execute</b></button></td></tr>
+	</tbody>
+	</table>
+</div>
+</div>
+
+  
+	 <div ng-show="showMe9">
+          <div class="col-sm-12" id="hosts">
+          <h4>Hosts</h4>
 		<table class="table">
     <thead>
       <tr>
         <th>Hosts Details</th>
       </tr>
     </thead>
-    <tbody>
       <tr>
-        <td>225.225.225.220</td>
-		<td><a data-toggle="pill" href="#menuP2" ng-click="product()"><h4><b>List</b></a></h4></td>
-        <td><a data-toggle="modal" data-target="#myModal3"  ng-click="edit()"><h4><b>Edit</b></a></h4></td>
-		<td><a data-toggle="modal" data-target="#myModal4" ng-click="delete()"><h4><b>Delete</b></a></h4></td>
-		</tr>
-		</tbody>
-		</table>
+        <td><ul class="nav nav-pills">
+    <li><a data-toggle="pill" href="#list">List</a></li>
+    <li><a data-toggle="pill" href="#edit">Edit</a></li>
+    <li><a data-toggle="pill" href="#delete">Delete</a></li>
+  </ul></td></tr></table>
+  
+  <div class="tab-content">
+    <div id="list" class="tab-pane fade">
+      <h3>Host Details</h3>
+   </div>
+   
+    <div id="edit" class="tab-pane fade">
+      <h3>Edit Details of Host</h3>
+	  <table class="table">
+    <thead>
+	<th> Enter the Details</th>
+	<tbody>
+      <tr>
+		<td><div class="input-group">
+      <input id="address" type="text" class="form-control" name="email" placeholder="IP Address"></div></td></tr>
+	  <tr><td><div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input id="email" type="text" class="form-control" name="email" placeholder="UserName"></div></td></tr>
+	 <tr> <td><div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+  </div></td></tr>
+  <tr><td align="right"><button type="submit"  name="save" id="save" ng-click="addItem()" class="btn btn-primary"><b>SAVE</b></button></td></tr>
 		</div>
-		<div class="modal-footer">
-           <p><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></p>
-        </div>
+	  </tbody>
+	  </table>
+	  </div>
+	  
+    <div id="delete" class="tab-pane fade">
+      <h3>Delete Host Details</h3>
+   </div>
 	  </div>
 	  </div>
 	  </div>
-	  </div>
-	  <div ng-show="showMe7">
-<div class="modal fade" id="myModal1" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Target List</h4>
-        </div>
-        <div class="modal-body">
+	  
+	  <div ng-show="showMe8">
+	  <div class="container-fluid">
+        <div class="col-sm-12" id="target">
+          <h4>Target List</h4>
 		<table class="table">
     <thead>
       <tr>
@@ -334,59 +585,26 @@ height:70%;
     </thead>
     <tbody>
       <tr>
-        <td>Traget1</td>
-        <td><a data-toggle="pill" href="#menuP2" ng-click="edit()"><h4><b>Edit</b></a></h4></td>
-		<td><a data-toggle="pill" href="#menuP2" ng-click="delete()"><h4><b>Delete</b></a></h4></td>
-		<td><div class="input-group">
-    <input type="text" class="form-control" placeholder="Search...">
-    <div class="input-group-btn">
-      <button class="btn btn-default" type="submit">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
+	 <td><ul>
+        <li ng-repeat="item in items">{{item}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button ng-click="remove($index)">Delete</button></li>
+   </ul>
+    <div>
+        <input type="text" ng-model="input">
+        <button type="submit" ng-click="add()">Add</button>
     </div>
-  </div></td>
-		<td><div class="dropdown">
- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> 
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#load">Launch</a></li>
-    <li><a href="#">Download</a></li>
-    <li><a href="#">Run</a></li>
-	 <li><a href="#">Active IP</a></li>
-  </ul></td>
-</div>
-      </tr>
-      <tr>
-        <td>Target2</td>
-        <td><a data-toggle="pill" href="#menuP2" ng-click="edit()"><h4><b>Edit</b></a></h4></td>
-		<td><a data-toggle="pill" href="#menuP2" ng-click="delete()"><h4><b>Delete</b></a></h4></td>
-      </tr>
-      <tr>
-        <td>Target3</td>
-        <td><a data-toggle="pill" href="#menuP2" ng-click="edit()"><h4><b>Edit</b></a></h4></td>
-		<td><a data-toggle="pill" href="#menuP2" ng-click="delete()"><h4><b>Delete</b></a></h4></td>
-      </tr>
     </tbody>
   </table>
         </div>
-		<div id="loader"></div>
-
-<div style="display:none;" id="myDiv" class="animate-bottom">
-  <h2>Tada!</h2>
-  <p>Some text in my newly loaded page..</p>
-</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-	  </div>
-    </div>
-  </div>
-  </div>
+		</div>
+		</div>
+		
+		
 <div ng-show="showMe3">
 <div class="container-fluid">
 <div class="row">
+<div class="login">
 <div class="col-sm-6">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" id="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -412,8 +630,8 @@ height:70%;
   </a>
 </div>
 </div>
-<div class="col-sm-6">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="col-sm-6" >
+<div id="myCarousel" class="carousel slide" data-ride="carousel" id="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -441,6 +659,7 @@ height:70%;
     <span class="glyphicon glyphicon-chevron-right"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
 </div>
 </div>
 </div>
@@ -512,11 +731,14 @@ height:70%;
   </div>
 <div class="col-sm-5">
 <div ng-show="showMe2">
-<img src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2017/05/05/Photos/Processed/wiprologo-kXmF--621x414@LiveMint.jpg" alt="wipro logo" width="70%"></br></br></br>
+<img src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2017/05/05/Photos/Processed/wiprologo-kXmF--621x414@LiveMint.jpg" alt="wipro logo" width="70%"></br>
 </div>
-<div ng-show="showMe1">
-    <p><a data-toggle="pill" href="#menu" ng-click="added()"><h3><b>Click Here</b></a> to Login</h3>
+<div ng-show="showMe1"> 
+	<h3>To Login</h3><div id="circlecanvas" width="100" height="100"><a data-toggle="pill" href="#menu" ng-click="added()"><h2><b>Click Here</b></h2></a></div>
+	
+	<h4>Have you been locked out of your account? Need to reset your password? Simply go to </h4><a data-toggle="pill" href="#menu" ng-click="added()"><h3><b>https://accountservices.wipro.com</b></h3></a></div>
 	</div>
+	
 <div ng-show="showMe2">
 <div class="tab-content">
     <div id="menu" class="tab-pane fade">
